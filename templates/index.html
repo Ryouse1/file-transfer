@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Center</title>
+</head>
+<body>
+<h1>Folders</h1>
+<ul>
+  {% for key, files in folders %}
+    <li>{{key}}:
+      <ul>
+      {% for f in files %}
+        <li><a href="/{{key}}/file/{{f}}">{{f}}</a></li>
+      {% endfor %}
+      </ul>
+      <a href="/{{key}}/folder/{{key}}">Download ZIP</a>
+    </li>
+  {% endfor %}
+</ul>
+</body>
+</html>
